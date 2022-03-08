@@ -1,0 +1,1 @@
+# babyfoot-manager-easilys
