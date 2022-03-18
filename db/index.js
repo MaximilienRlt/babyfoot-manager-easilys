@@ -8,7 +8,7 @@ class DbClient {
         this.client = new Client({
             host: process.env.DB_HOST,
             user: "postgres",
-            password: null
+            password: "NULL"
         });
         this.client.connect();
     }
