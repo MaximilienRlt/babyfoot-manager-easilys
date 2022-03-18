@@ -72,7 +72,6 @@ Les données sont stockées sous une base de données PostgreSQL dont le schéma
 | `player1` (FK Players) NOT NULL | `INT`     | Identifiant joueur 1 |
 | `player2` (FK Players) NOT NULL | `INT`     | Identifiant joueur 2 |
 | `id_winner` (FK Players)        | `INT`     | Identifiant du joueur gagnant |
-| `id_winner`                     | `INT`     | Identifiant du joueur gagnant |
 
 ### Client
 L'interface de l'application est une page statique réalisée en utilisant HTML/CSS/VanillaJS.
