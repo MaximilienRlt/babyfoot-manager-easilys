@@ -56,21 +56,23 @@ Mise en place des Websockets en utilisant [socket.io](https://socket.io/). Les f
 
 ### Données
 Les données sont stockées sous une base de données PostgreSQL dont le schéma est le suivant :
-* Table `Players`
+* Table `Players`  
+
 | Attribut | Type     | Description                              |
 | :-------- | :------- | :--------------------------------        |
 | `id_player` (PK)     | `INT` | Identifier du joueur |
 | `name` NOT NULL      | `VARCHAR` | Nom du joueur |
 
-* Table `Games`
-| Attribut | Type     | Description                              |
-| :-------- | :------- | :--------------------------------        |
-| `id` (PK)     | `INT` | Identifiant de la partie |
-| `description`      | `VARCHAR` | Informations supplémentaires |
-| `player1` (FK Players) NOT NULL | `INT` | Identifiant joueur 1 |
-| `player2` (FK Players) NOT NULL | `INT` | Identifiant joueur 2 |
-| `id_winner` (FK Players)     | `INT` | Identifiant du joueur gagnant |
-| `id_winner`     | `INT` | Identifiant du joueur gagnant |
+* Table `Games`  
+
+| Attribut                        | Type      | Description                              |
+| :------------------------------ | :-------  | :--------------------------------        |
+| `id` (PK)                       | `INT`     | Identifiant de la partie |
+| `description`                   | `VARCHAR` | Informations supplémentaires |
+| `player1` (FK Players) NOT NULL | `INT`     | Identifiant joueur 1 |
+| `player2` (FK Players) NOT NULL | `INT`     | Identifiant joueur 2 |
+| `id_winner` (FK Players)        | `INT`     | Identifiant du joueur gagnant |
+| `id_winner`                     | `INT`     | Identifiant du joueur gagnant |
 
 ### Client
 L'interface de l'application est une page statique réalisée en utilisant HTML/CSS/VanillaJS.
