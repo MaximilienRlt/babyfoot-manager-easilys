@@ -6,9 +6,8 @@ class DbClient {
 
     constructor() {
         this.client = new Client({
-            host:"localhost",
-            port: 5432,
-            user: postgres,
+            host: process.env.DB_HOST,
+            user: "postgres",
             password: null
         });
         this.client.connect();
