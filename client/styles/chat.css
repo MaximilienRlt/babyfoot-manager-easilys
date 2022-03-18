@@ -1,0 +1,99 @@
+#chat{
+    height: 45vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: solid 1px lightgrey;
+    border-radius: 5px;
+}
+
+#chat > ul {
+    margin: 10px 0;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#openChatDialogBtn {
+    position: relative;
+}
+
+.badge {
+    display: none;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.username-input-wrapper {
+    padding-bottom: 5px;
+}
+
+#usernameInput:not(:focus) {
+    background-color: lightgrey;
+}
+
+.client-msg {
+    display:flex;
+    flex-direction: column;
+    border: solid 1px lightgrey;
+    background-color: var(--finished-state-bg-color);
+    margin: 5px; 
+    border-radius: 10px;
+    padding: 5px;
+        -webkit-animation: append-bloc-left .1s linear;
+    -moz-animation:  append-bloc-left .1s linear;
+    animation: append-bloc-left .1s linear;  
+}
+
+.server-msg {
+    color: lightgrey;
+    font-style: italic;
+    padding-top: 3px;
+    padding-bottom: 10px;
+    padding-left:8px;
+    padding-right: 8px;
+}
+
+.client-msg > .header-msg-card {
+    display: flex;
+    padding-bottom: 2px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7em;
+}
+
+.client-msg > .header-msg-card > * {
+    margin: 0 5px;
+}
+
+.client-msg > .header-msg-card > .user-msg {
+    background-color: var(--card-bg-color);
+    color: white;
+    padding: 3px 6px;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.client-msg > .content-msg-card {
+    display: flex;
+    font-size: 0.9em;
+    padding: 5px 10px;
+}
+
+#chatForm {
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top: 5px;
+}
+
+#chatForm > input[type=text]{
+    display: flex;
+    flex-grow: 1;
+    margin-right: 8px;
+}

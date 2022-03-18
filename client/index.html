@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+        <script src="js/controllers/gameList.controller.js"></script>
+
+        <script src="js/models/gameList.model.js"></script>
+        <script src="js/models/chat.model.js"></script>
+
+        <script src="js/views/gameList.view.js"></script>
+        <script src="js/views/feedbackAlert.view.js"></script>
+        <script src="js/views/statsCards.view.js"></script>
+        <script src="js/views/dialogForm.view.js"></script>
+        <script src="js/views/dialogChat.view.js"></script>
+
+        <script src="js/websocket.js"></script>
+        <script src="js/utils.js"></script>
+
+        <script src="js/app.js"></script>
+
+
+        <script src="js/polyfill-dialog.js"></script>
+        <script src="js/libs/moment-with-locales.js"></script>
+        <script src="js/libs/socket.io.min.js"></script>
+
+        <link href="styles/styles.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/dialog-polyfill.css" />
+        <link rel="stylesheet" type="text/css" href="styles/tooltip.css" />
+        <link rel="stylesheet" type="text/css" href="styles/modal.css" />
+        <link rel="stylesheet" type="text/css" href="styles/alert.css" />
+        <link rel="stylesheet" type="text/css" href="styles/gamelist.css" />
+        <link rel="stylesheet" type="text/css" href="styles/chat.css" />
+        
+    <title>Babyfoot Manager</title>
+    </head>
+    <header>
+        <h1>⚽ Baby<span style="text-decoration: underline; text-underline-offset: 1.2rem;">foot Manager</span></h1>
+    </header>
+    <body>
+        <div class="card">
+        <div class="stats-card-wrapper">
+            <div class="stats-card" id="in-progress-card">
+                <div>
+                    <span>En attente ⌛</span>
+                </div>
+                <span id="currentInProgressGames">0</span>
+            </div>
+            <div class="stats-card" id="finished-card">
+                <div>
+                    <span>Terminée 🏁</span>
+                </div>
+                <span id="currentFinishedGames">0</span>
+            </div>
+        </div>
+            <div id="games-list-container"></div>
+        </div>
+        <div id="general-actions">
+            <button class="success rounded" id="openNewGameDialogBtn" type="button" title="Créer une nouvelle partie!"><span>+</span></button>
+            <button class="info rounded" id="openChatDialogBtn" type="button" title="Ouvrir le chat général!">
+                <span>💬</span>
+                <span class="badge"></span>
+            </button>
+        </div>
+        <dialog id="newGameDialog" class="modal">
+            <div class="toolbar">
+                <span>➕ Création d'une partie</span>
+                <button class="close-dialog-btn close-btn delete-btn" title="Fermer la fenêtre">+</button>
+            </div>    
+            <form method="dialog" name="newGameForm" id="newGameForm">
+                <div class="modal-content">
+                    <div class="scoreboard-card">
+                        <input type="text" id="new-game-player1" placeholder="Joueur 1" required autofocus/>
+                        <span style="font-size: 1.2em; font-variant: small-caps;">vs</span>
+                        <input type="text" id="new-game-player2" placeholder="Joueur 2" required/>
+                    </div>
+                    <textarea id="new-game-description" rows="4" style="display: block;width: 100%; margin: 10px 0;" placeholder="Description"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="close-dialog-btn btn error">Fermer</button>
+                    <button type="submit" class="btn primary">+ Ajouter</button>
+                </div>
+                </form>
+        </dialog>
+
+        <dialog id="chatDialog" class="modal">
+            <div class="toolbar">
+                <span>⌨️ Chat général</span>
+                <button class="close-dialog-btn close-btn delete-btn" title="Fermer la fenêtre">+</button>
+            </div>
+            <div class="modal-content">
+                <div class="username-input-wrapper">
+                    
+                    <label for="username">Votre pseudo</label>
+                    <input type="text" name="username" id="usernameInput" />
+                </div>
+                <div class="chat-wrapper" id="chat" name="chatForm">
+                    <ul></ul>
+                </div>
+                <div id="chatForm">
+                        <input type="text" id="chatInput"  autocomplete="off" placeholder="Message..." required autofocus />
+                        <button class="btn primary rounded small-btn">✉️</button>
+                </div>
+            </div>
+        </dialog>
+
+
+        <div class="action-alert" id="feedbackAlert">
+            <div>
+                <span>🛈</span>
+                <p></p>
+            </div>
+        </div>
+    </body>
+</html>

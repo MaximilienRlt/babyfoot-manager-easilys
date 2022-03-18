@@ -1,0 +1,54 @@
+.modal{
+    background-color: white;
+    margin: auto;
+    width: auto;
+    max-width: 500px;
+    border-radius: 10px;
+    border:none;
+    padding: 0 0 10px 0;
+    overflow-x: hidden;
+}
+
+.toolbar {
+    background-color: var(--stats-bg-color);
+    height: 50px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.toolbar > span {
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+} 
+
+.modal-content {
+    padding: 10px 25px;
+}
+
+.modal-actions {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+#submit-new-game-btn {
+    background-color: var(--stats-bg-color);
+    border: solid 1px var(--stats-bg-color);
+    color: white;
+    width: 80%;
+    padding: 5px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit-new-game-btn:hover {
+    background-color:lightblue;
+    color: black;
+}
